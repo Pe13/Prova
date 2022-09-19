@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 let programma = [];
 
 (() => {
@@ -14,6 +16,5 @@ let programma = [];
         programma.push(giorno);
     }
 
-    programma = JSON.parse(JSON.stringify(programma));
-    // salvo il programma
+    fs.writeFileSync('programma.json', JSON.stringify(programma, null, 2));
 })();

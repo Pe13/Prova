@@ -1,0 +1,58 @@
+body {
+    background-color: rgb(28, 28, 28);
+}
+
+* {
+    color: gainsboro;
+}
+
+#general-wrapper {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}
+
+.header-giorno {
+    background-color: gray;
+    color: black;
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 0;
+}
+
+.freccia {
+    display: inline-block;
+    rotate: 45deg;
+    width: 5px;
+    aspect-ratio: 1;
+    transition-duration: 0.3s;
+    border-right: black solid 2px;
+    border-top: black solid 2px;
+}
+.freccia.giù {
+    transform: rotate(90deg);
+}
+
+.grid-giorno {
+    display: grid;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    grid-template: repeat(25, 1fr) / repeat(13, 1fr);
+    transition: max-height 0.5s;
+}
+.grid-giorno.giù {
+    max-height: 1000px;
+}
+
+.grid-giorno > div {
+    background-color: rgb(200, 200, 200);
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+
+.grid-element {
+    border: 1px solid gray;
+}

@@ -1,0 +1,22 @@
+button {
+    background-color: gray;
+    color: black;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding-inline: 10px;
+    padding-block: 7px;
+}
+#spegni.on {
+    background-color: blue;
+    border-color: rgb(0, 0, 245);
+}
+#accendi.on {
+    background-color: red;
+    border-color: #f50000;
+}
+
+#bottone-modifica {
+    background-color: #f36e3c;
+    border-color: black;
+}
+

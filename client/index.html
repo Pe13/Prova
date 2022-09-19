@@ -5,20 +5,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="module">
-        import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
-      
-        const socket = io();
-      </script>
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="/client/css/style.css">
+    <link rel="stylesheet" href="/client/css/styleBottoni.css">
+    <link rel="stylesheet" href="client/css/scedaModifica.css">
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+    <script src="/client/js/animaHeaders.js" defer></script>
+    <script src="/client/js/main.js" defer></script>
+    <script src="/client/js/listeners.js" defer></script>
+    <script src="/client/js/bottoni.js" defer></script>
 </head>
 <body>
     <div id="general-wrapper">
-        <h1 id="tempAtt">Temperatura attuale: ---</h1>
-        <h1 id="tempDes">Temperatura desiderata: ---</h1>
-        <p class="header-giorno">Lunedì</p>
-        <div class="grid-giorno" id="1"></div>
+        <h2 id="tempAtt" style="margin-bottom: 0; text-align: center;">Temperatura attuale: ---</h2>
+        <h2 id="tempDes" style="margin-bottom: 0; text-align: center;">Temperatura desiderata: ---</h2>
+        <h2 id="statoCaldaia">Caldaia ---</h2>
+        <div>
+            <button id="accendi">Accendi caldaia (force)</button>
+            <button id="spegni">Spegni caldaia (force)</button>
+        </div>
+        <button id="bottone-modifica">Modifica programma</button>
+        <div id="scheda-modifica">
+            Per quali giorni? <br>
+            <input type="checkbox" value="1" id="checkBox-1">
+            <label for="checkBox-1">Lunedì</label>
+            <input type="checkbox" value="2" id="checkBox-2">
+            <label for="checkBox-2">Martedì</label>
+            <input type="checkbox" value="3" id="checkBox-3">
+            <label for="checkBox-3">Mercoledì</label>
+            <br>
+            <input type="checkbox" value="4" id="checkBox-4">
+            <label for="checkBox-4">Giovedì</label>
+            <input type="checkbox" value="5" id="checkBox-5">
+            <label for="checkBox-5">Venerdì</label>
+            <br>
+            <input type="checkbox" value="6" id="checkBox-6">
+            <label for="checkBox-6">Sabato</label>
+            <input type="checkbox" value="0" id="checkBox-0">
+            <label for="checkBox-0">Domenica</label>
+            <br>
+            <label for="input-da">Dalle: </label>
+            <input type="text" name="da" id="input-da" placeholder="hh:mm">
+            <label for="input-a">Alle: </label>
+            <input type="text" name="da" id="input-a" placeholder="hh:mm">
+            <br>
+            <label for="input-gradi">Temperatura: </label>
+            <input type="text" name="gradi" id="input-gradi" placeholder="Max: --">
+            <br>
+            <button id="submit">Conferma</button>
+        </div>
+        <p id="header-1" class="header-giorno">
+            Lunedì
+            <span class="freccia scura"></span>
+        </p>
+        <div class="grid-giorno" id="tabella-1"></div>
+        <p id="header-2" class="header-giorno">
+            Martedì
+            <span class="freccia scura"></span>
+        </p>
+        <div class="grid-giorno" id="tabella-2"></div>
+        <p id="header-3" class="header-giorno">
+            Mercoledì
+            <span class="freccia scura"></span>
+        </p>
+        <div class="grid-giorno" id="tabella-3"></div>
+        <p id="header-4" class="header-giorno">
+            Giovedì
+            <span class="freccia scura"></span>
+        </p>
+        <div class="grid-giorno" id="tabella-4"></div>
+        <p id="header-5" class="header-giorno">
+            Venerdì
+            <span class="freccia scura"></span>
+        </p>
+        <div class="grid-giorno" id="tabella-5"></div>
+        <p id="header-6" class="header-giorno">
+            Sabato
+            <span class="freccia scura"></span>
+        </p>
+        <div class="grid-giorno" id="tabella-6"></div>
+        <p id="header-0" class="header-giorno">
+            Domenica
+            <span class="freccia scura"></span>
+        </p>
+        <div class="grid-giorno" id="tabella-0"></div>
     </div>
 </body>
 </html>
